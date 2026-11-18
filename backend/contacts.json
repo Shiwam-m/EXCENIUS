@@ -1,0 +1,42 @@
+[
+  {
+    "full_name": "Jane Cooper",
+    "email": "jane@company.com",
+    "company": "Acme Corp",
+    "service": "Website Development",
+    "message": "We are looking for a complete redesign of our enterprise web platform.",
+    "created_at": "2026-11-18T16:11:15.994607+00:00"
+  },
+  {
+    "full_name": "Shiwam Maddhesiya",
+    "email": "shiwammaddheshiya@gmail.com",
+    "company": "nimbusnext",
+    "service": "Website Development",
+    "message": "I am writing for conntect you ",
+    "created_at": "2026-11-18T18:03:47.267807+00:00"
+  },
+  {
+    "full_name": "Elon Musk",
+    "email": "elon@x.com",
+    "company": "Tesla & SpaceX",
+    "service": "Full Digital Strategy",
+    "message": "We need NOIRFORM to build a cutting-edge next-gen interface for our latest venture.",
+    "created_at": "2026-11-18T18:17:10.038789+00:00"
+  },
+  {
+    "full_name": "Shiwam Maddhesiya",
+    "email": "shiwammaddheshiya@gmail.com",
+    "company": "nimbusnext",
+    "service": "Customer Experience (CX)",
+    "message": "This is only for testing purpose",
+    "created_at": "2026-11-18T18:19:07.523366+00:00"
+  },
+  {
+    "full_name": "Testing ",
+    "email": "Testing@gmail.com",
+    "company": "",
+    "service": "Website Development",
+    "message": "This is for testing the 2nd testing purpose so that i can test it well ",
+    "created_at": "2026-11-18T18:34:37.101642+00:00"
+  }
+]
