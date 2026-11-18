@@ -106,7 +106,8 @@ def get_contacts():
 def email_status():
     from dotenv import load_dotenv
     env_file = os.path.join(os.path.dirname(__file__), ".env")
-    load_dotenv(dotenv_path=env_file, override=True)
+    # load_dotenv(dotenv_path=env_file, override=True)
+    load_dotenv(dotenv_path=env_file, override=False)
     smtp_pass = os.getenv("SMTP_PASS", "").strip()
     configured = bool(smtp_pass and not smtp_pass.startswith("your_"))
     return {
