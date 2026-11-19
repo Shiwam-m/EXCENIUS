@@ -40,12 +40,12 @@ export default function Nav() {
         }`}
       >
         <div className="mx-auto max-w-[1440px] px-6 md:px-10 h-[72px] flex items-center justify-between">
-          <a href="#home" data-testid="nav-logo" className="flex items-center gap-2.5" aria-label="NOIRFORM home">
+          <a href="#home" data-testid="nav-logo" className="flex items-center gap-2.5" aria-label="EXCENIUS home">
             <svg viewBox="0 0 32 32" className="w-7 h-7" aria-hidden="true">
               <rect width="32" height="32" rx="7" fill="#0A0A0A" stroke="rgba(255,255,255,0.35)" />
-              <path d="M10 22V10l12 12V10" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="square" fill="none" />
+              <path d="M21 10H11v12h10M11 16h8" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="square" fill="none" />
             </svg>
-            <span className="font-display font-bold tracking-tight text-lg">NOIRFORM</span>
+            <span className="font-display font-bold tracking-tight text-lg">EXCENIUS</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8" aria-label="Primary">

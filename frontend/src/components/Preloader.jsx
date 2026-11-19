@@ -28,7 +28,7 @@ export default function Preloader() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="font-display font-extrabold text-3xl tracking-tight"
             >
-              NOIR<span className="text-white/40">FORM</span>
+              EXCEN<span className="text-white/40">IUS</span>
             </motion.div>
           </div>
           <motion.div

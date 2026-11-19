@@ -37,12 +37,12 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <a href="#home" className="flex items-center gap-2.5" aria-label="NOIRFORM home">
+            <a href="#home" className="flex items-center gap-2.5" aria-label="EXCENIUS home">
               <svg viewBox="0 0 32 32" className="w-7 h-7" aria-hidden="true">
                 <rect width="32" height="32" rx="7" fill="#0A0A0A" stroke="rgba(255,255,255,0.35)" />
-                <path d="M10 22V10l12 12V10" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="square" fill="none" />
+                <path d="M21 10H11v12h10M11 16h8" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="square" fill="none" />
               </svg>
-              <span className="font-display font-bold tracking-tight text-lg">NOIRFORM</span>
+              <span className="font-display font-bold tracking-tight text-lg">EXCENIUS</span>
             </a>
             <p className="mt-5 text-sm text-white/50 leading-relaxed max-w-xs">
               We don&apos;t just build digital products. We create meaningful digital experiences
@@ -126,12 +126,12 @@ export default function Footer() {
           aria-hidden="true"
           className="mt-20 text-center font-display font-extrabold leading-none select-none text-outline text-[16.5vw] -mb-2"
         >
-          NOIRFORM
+          EXCENIUS
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} NOIRFORM. All rights reserved.
+            © {new Date().getFullYear()} EXCENIUS. All rights reserved.
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/30">
             Digital Experiences That Move Businesses Forward

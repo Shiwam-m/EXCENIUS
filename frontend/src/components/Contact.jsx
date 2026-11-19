@@ -64,7 +64,7 @@ export default function Contact() {
       formData.append("service", values.service);
       formData.append("message", values.message);
       formData.append("subject", `🔔 New Project Inquiry: ${values.full_name} (${values.service})`);
-      formData.append("from_name", "NOIRFORM Studio Website");
+      formData.append("from_name", "EXCENIUS Studio Website");
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -125,11 +125,11 @@ export default function Contact() {
             <div className="mt-10">
               <p className="field-label mb-2">Email us</p>
               <a
-                href="mailto:hello@noirform.studio"
+                href="mailto:shiwammaddheshiya@gmail.com"
                 data-testid="contact-email-link"
                 className="font-display font-semibold text-lg md:text-xl hover:text-white/70 transition-colors"
               >
-                hello@noirform.studio
+                shiwammaddheshiya@gmail.com
               </a>
             </div>
           </Reveal>

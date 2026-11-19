@@ -13,8 +13,8 @@ except ImportError:
     from email_service import send_notification_email
 
 app = FastAPI(
-    title="NOIRFORM API",
-    description="Backend API for NOIRFORM Digital Studio",
+    title="EXCENIUS API",
+    description="Backend API for EXCENIUS Digital Studio",
     version="1.0.0"
 )
 
@@ -48,7 +48,7 @@ class ContactMessage(BaseModel):
 @app.get("/api")
 @app.get("/api/")
 def root():
-    return {"message": "Hello World", "service": "NOIRFORM API", "status": "online"}
+    return {"message": "Hello World", "service": "EXCENIUS API", "status": "online"}
 
 @app.post("/api/contact", status_code=status.HTTP_200_OK)
 def submit_contact(payload: ContactMessage, background_tasks: BackgroundTasks):
@@ -133,7 +133,7 @@ def test_email():
     return send_notification_email(
         full_name="Shiwam Maddhesiya (Test)",
         email="test@example.com",
-        company="NOIRFORM Client",
+        company="EXCENIUS Client",
         service="Website Development",
         message="This is a test notification to verify that instant email alerts are functioning properly.",
         timestamp=now_iso

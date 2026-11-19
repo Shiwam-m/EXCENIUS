@@ -22,7 +22,7 @@ def build_email_content(full_name: str, email: str, company: Optional[str], serv
     <body style="margin: 0; padding: 24px; background-color: #0A0A0A; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #FFFFFF;">
         <div style="max-width: 600px; margin: 0 auto; background-color: #121212; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 32px;">
             <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 20px; margin-bottom: 24px;">
-                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(255, 255, 255, 0.5); font-family: monospace;">NOIRFORM Lead Alert</span>
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(255, 255, 255, 0.5); font-family: monospace;">EXCENIUS Lead Alert</span>
                 <h1 style="font-size: 24px; font-weight: 700; color: #FFFFFF; margin: 8px 0 0 0;">New Inquiry Received</h1>
             </div>
 
@@ -47,7 +47,7 @@ def build_email_content(full_name: str, email: str, company: Optional[str], serv
     </html>
     """
     plain_text = (
-        f"New Project Inquiry from NOIRFORM Website\n\n"
+        f"New Project Inquiry from EXCENIUS Website\n\n"
         f"Client Name: {full_name}\n"
         f"Email: {email}\n"
         f"Company: {company or 'N/A'}\n"
@@ -73,10 +73,10 @@ def send_via_resend_api(
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
-        "User-Agent": "NOIRFORM-Studio/1.0"
+        "User-Agent": "EXCENIUS-Studio/1.0"
     }
     payload = {
-        "from": "NOIRFORM Studio <onboarding@resend.dev>",
+        "from": "EXCENIUS Studio <onboarding@resend.dev>",
         "to": [recipient],
         "reply_to": client_email,
         "subject": subject,
@@ -111,7 +111,7 @@ def send_via_smtp(
     """
     msg = EmailMessage()
     msg["Subject"] = subject
-    msg["From"] = f"NOIRFORM Studio <{smtp_user}>"
+    msg["From"] = f"EXCENIUS Studio <{smtp_user}>"
     msg["To"] = recipient
     msg["Reply-To"] = client_email
     msg.set_content(plain_text)

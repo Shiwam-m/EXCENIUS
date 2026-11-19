@@ -36,7 +36,7 @@ export default function WhyUs() {
           label="Why Choose Us"
           title={
             <>
-              Why brands choose <em className="font-serifit italic font-normal">NOIRFORM.</em>
+              Why brands choose <em className="font-serifit italic font-normal">EXCENIUS.</em>
             </>
           }
         />

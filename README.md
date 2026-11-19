@@ -1,4 +1,4 @@
-# NOIRFORM — Digital Experiences That Move Businesses Forward
+# EXCENIUS — Digital Experiences That Move Businesses Forward
 
 A full-service digital studio and creative agency website built with **React 18 + Vite + Tailwind CSS** and instant email notifications via **Web3Forms**.
 
