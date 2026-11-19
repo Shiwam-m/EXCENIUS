@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Globe, Smartphone, Share2, TrendingUp, Sparkles, ArrowUpRight, Plus } from "lucide-react";
+import { Globe, Smartphone, Share2, TrendingUp, Sparkles, ArrowUpRight, Plus, Bot } from "lucide-react";
 import { Reveal, SectionHead } from "./Reveal";
 import Modal from "./Modal";
 
@@ -34,6 +34,22 @@ const SERVICES = [
       "iOS & Android development",
       "Design systems for mobile",
       "Launch & store submission support",
+    ],
+  },
+  {
+    id: "ai-automation",
+    icon: Bot,
+    title: "AI & Automation Solutions",
+    tagline: "Intelligent Workflows & Custom AI",
+    description:
+      "We design and deploy custom AI agents, intelligent workflow automations, and smart integrations that streamline operations and accelerate business growth.",
+    detail:
+      "Eliminate repetitive bottlenecks and scale your operations with modern AI. We engineer custom LLM integrations, autonomous AI agents, and automated business pipelines that connect your tools, process data automatically, and deliver measurable ROI.",
+    deliverables: [
+      "Custom AI agents & LLM integrations",
+      "End-to-end business process automation",
+      "AI chatbots & conversational assistants",
+      "Automated CRM, email & workflow pipelines",
     ],
   },
   {
@@ -106,7 +122,7 @@ export default function Services() {
           />
           <Reveal delay={0.15}>
             <p className="max-w-sm text-white/60 leading-relaxed md:text-right">
-              Five disciplines, one goal: digital experiences that move your business forward.
+              From web, mobile, and AI automation to growth strategy: experiences that move your business forward.
             </p>
           </Reveal>
         </div>
@@ -114,7 +130,7 @@ export default function Services() {
         <div className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
           {SERVICES.map((s, i) => {
             const Icon = s.icon;
-            const span = i < 2 ? "lg:col-span-3" : "lg:col-span-2";
+            const span = "lg:col-span-2";
             return (
               <Reveal key={s.id} delay={0.06 * i} className={span}>
                 <div

@@ -1,6 +1,7 @@
 const ITEMS = [
   "Website Development",
   "Mobile Applications",
+  "AI & Automation",
   "Social Media",
   "Performance Marketing",
   "Customer Experience",

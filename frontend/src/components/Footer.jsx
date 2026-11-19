@@ -14,6 +14,7 @@ const QUICK_LINKS = [
 const SERVICE_LINKS = [
   "Website Development",
   "Mobile App Development",
+  "AI & Automation Solutions",
   "Social Media Management",
   "Digital Advertising & Marketing",
   "Customer Experience (CX)",
@@ -103,11 +104,11 @@ export default function Footer() {
           <div>
             <p className="field-label mb-5">Get in Touch</p>
             <a
-              href="mailto:shiwammaddheshiya@gmail.com"
+              href="mailto:contact.excenius@gmail.com"
               data-testid="footer-email-link"
               className="text-sm text-white/60 hover:text-white transition-colors"
             >
-              shiwammaddheshiya@gmail.com
+              contact.excenius@gmail.com
             </a>
             <p className="mt-6">
               <button

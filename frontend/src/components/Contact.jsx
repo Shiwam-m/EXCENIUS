@@ -21,6 +21,7 @@ const API = getBackendUrl();
 const SERVICE_OPTIONS = [
   "Website Development",
   "Mobile App Development",
+  "AI & Automation Solutions",
   "Social Media Management",
   "Digital Advertising & Marketing",
   "Customer Experience (CX)",
@@ -125,11 +126,11 @@ export default function Contact() {
             <div className="mt-10">
               <p className="field-label mb-2">Email us</p>
               <a
-                href="mailto:shiwammaddheshiya@gmail.com"
+                href="mailto:contact.excenius@gmail.com"
                 data-testid="contact-email-link"
                 className="font-display font-semibold text-lg md:text-xl hover:text-white/70 transition-colors"
               >
-                shiwammaddheshiya@gmail.com
+                contact.excenius@gmail.com
               </a>
             </div>
           </Reveal>
