@@ -7,7 +7,7 @@ services:
   # - Zero lag (loads in <100ms)
   # - Web3Forms delivers instant emails to shiwammaddheshiya@gmail.com
   - type: web
-    name: noirform-agency
+    name: noirform
     runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
