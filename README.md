@@ -1,10 +1,10 @@
 # NOIRFORM — Digital Experiences That Move Businesses Forward
 
-A full-service digital studio and creative agency website built with **React 18 + Vite + Tailwind CSS** and a **Python FastAPI** backend.
+A full-service digital studio and creative agency website built with **React 18 + Vite + Tailwind CSS** and instant email notifications via **Web3Forms**.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Local Development)
 
 ### 1-Click Launch (Windows)
 Double-click `start.bat` or run:
@@ -12,8 +12,32 @@ Double-click `start.bat` or run:
 .\run.ps1
 ```
 This automatically launches:
-- **FastAPI Backend**: [http://127.0.0.1:8001](http://127.0.0.1:8001) (API docs at `/docs`)
 - **React Frontend**: [http://localhost:5173](http://localhost:5173)
+- **FastAPI Backend**: [http://127.0.0.1:8001](http://127.0.0.1:8001)
+
+---
+
+## 🌐 1-Click Render Deployment (Free & Fast)
+
+This project includes a pre-configured `render.yaml` blueprint. Because contact submissions are delivered instantly to your Gmail via Web3Forms over HTTPS, the site runs on Render as a **Global Static Site**:
+- ⚡ **Never sleeps** (zero cold starts or lag)
+- 💰 **100% Free forever**
+- 📩 **Instant email notifications** directly to `shiwammaddheshiya@gmail.com`
+
+### Deployment Steps:
+1. Push this folder to your GitHub account:
+   ```bash
+   git init
+   git add .
+   git commit -m "Deploy NOIRFORM"
+   git branch -M main
+   git remote add origin https://github.com/<YOUR-USERNAME>/<YOUR-REPO>.git
+   git push -u origin main
+   ```
+2. Go to **[dashboard.render.com](https://dashboard.render.com/)**.
+3. Click **New +** ➔ **Blueprint**.
+4. Select your GitHub repository and click **Apply**.
+5. Render will automatically build and launch your live website in under 60 seconds!
 
 ---
 
@@ -21,95 +45,39 @@ This automatically launches:
 
 ```
 Company_/
-├── backend/
-│   ├── main.py              # FastAPI app with CORS, contact form handling, and persistence
-│   ├── requirements.txt     # Python dependencies (fastapi, uvicorn, pydantic)
-│   └── contacts.json        # Automatically created storage for contact inquiries
 ├── frontend/
 │   ├── public/
 │   │   └── logo.svg         # Monogram vector logo
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── About.jsx        # Agency story & 5 daily disciplines with hover effects
-│   │   │   ├── Contact.jsx      # Zod-validated contact form with Sonner dark toasts
+│   │   │   ├── About.jsx        # Agency story & 5 daily disciplines
+│   │   │   ├── Contact.jsx      # Web3Forms + Zod validation form
 │   │   │   ├── Cursor.jsx       # Custom dual magnetic trailing cursor
 │   │   │   ├── ErrorBoundary.jsx# Error boundary fallback
-│   │   │   ├── Footer.jsx       # Multi-column footer & Lenis back-to-top button
-│   │   │   ├── Hero.jsx         # Parallax editorial hero with scroll indicator
-│   │   │   ├── HeroCanvas.jsx   # Interactive 2D constellation canvas (mouse proximity)
-│   │   │   ├── Icons.jsx        # Clean SVG social media brand icons
-│   │   │   ├── LenisProvider.jsx# Lenis smooth inertia scrolling provider
+│   │   │   ├── Footer.jsx       # Multi-column footer & Lenis back-to-top
+│   │   │   ├── Hero.jsx         # Parallax editorial hero
+│   │   │   ├── HeroCanvas.jsx   # Interactive 2D constellation canvas
+│   │   │   ├── Icons.jsx        # SVG brand icons
+│   │   │   ├── LenisProvider.jsx# Lenis smooth inertia scrolling
 │   │   │   ├── Marquee.jsx      # Infinite 48s typography ticker
-│   │   │   ├── Modal.jsx        # Framer Motion animated modal portal (ESC + backdrop close)
-│   │   │   ├── Nav.jsx          # Sticky blur header & mobile slide-out menu
+│   │   │   ├── Modal.jsx        # Animated service popups
+│   │   │   ├── Nav.jsx          # Sticky blur header & mobile drawer
 │   │   │   ├── Preloader.jsx    # Minimalist splash preloader screen
-│   │   │   ├── Process.jsx      # 4-step vertical timeline with scroll-synced spring line
-│   │   │   ├── Reveal.jsx       # Reusable viewport scroll reveal wrapper
-│   │   │   ├── Services.jsx     # 5 service cards with detail modals and checklist
-│   │   │   ├── WhyUs.jsx        # 6-card grid with high-contrast color inversion
-│   │   │   └── Work.jsx         # Filterable portfolio & case-study modals
+│   │   │   ├── Process.jsx      # 4-step vertical timeline
+│   │   │   ├── Reveal.jsx       # Viewport scroll reveal wrapper
+│   │   │   ├── Services.jsx     # 5 service cards with detail modals
+│   │   │   ├── WhyUs.jsx        # 6-card grid with hover inversion
+│   │   │   └── Work.jsx         # Filterable portfolio showcase
 │   │   ├── App.jsx              # Main page assembly
 │   │   ├── index.css            # Tailwind directives, SVG film grain, custom utilities
 │   │   └── main.jsx             # React entry point
 │   ├── index.html           # Google Fonts & SEO meta tags
 │   ├── package.json         # NPM scripts and dependencies
 │   ├── tailwind.config.js   # Custom fonts, colors, and animations
-│   └── vite.config.js       # Vite configuration with `/api` proxy to port 8001
+│   └── vite.config.js       # Vite configuration
+├── backend/                 # Local FastAPI server & backup lead storage
+├── render.yaml              # Render 1-click deployment blueprint
 ├── run.ps1                  # PowerShell concurrent launcher
 ├── start.bat                # Batch launcher for Windows
 └── README.md
 ```
-
----
-
-## 🛠️ Tech Stack & Key Features
-
-### Frontend
-- **React 18** + **Vite 6**
-- **Tailwind CSS v3** with bespoke tokens:
-  - Fonts: **Syne** (Display), **Instrument Serif** (Editorial accents), **JetBrains Mono** (Tech metadata), **Plus Jakarta Sans** (Body)
-  - Colors: Base `#0A0A0A`, elevated cards `#121212`, hairline white borders
-- **Framer Motion**:
-  - Mask-overflow text reveal animations
-  - Smooth parallax scroll transforms
-  - Exit & enter spring modals
-  - Scroll-linked spring progress bar on the Process timeline
-- **Lenis Smooth Scroll**: Inertia wheel scrolling and smooth anchor jumping with navigation offset.
-- **Interactive Canvas**: Custom particle physics network connecting nodes with mouse proximity tracking.
-- **Custom Magnetic Cursor**: Dual dot + trailing ring with `mix-blend-difference` (touchscreen-aware).
-- **Form Handling**: `react-hook-form` + `zod` client validation + `sonner` notifications.
-
-### Backend (FastAPI)
-- **FastAPI** + **Uvicorn**
-- **CORS Middleware** preconfigured for seamless client communication.
-- Endpoints:
-  - `GET /api/` — Health check
-  - `POST /api/contact` — Validates and stores incoming inquiries into `backend/contacts.json`
-  - `GET /api/contacts` — View received inquiries
-  - `GET /docs` — Swagger UI API documentation
-
----
-
-## 🔧 Manual Setup (Optional)
-
-### Backend
-```powershell
-cd backend
-pip install -r requirements.txt
-python -m uvicorn main:app --reload --port 8001
-```
-
-### Frontend
-```powershell
-cd frontend
-npm install
-npm run dev
-```
-Production build:
-```powershell
-npm run build
-```
-
-## Run Both Files in single commond 
-``` .\run.ps1
-Both services launched in separate windows!
