@@ -72,16 +72,18 @@ def submit_contact(payload: ContactMessage, background_tasks: BackgroundTasks):
     with open(CONTACTS_FILE, "w", encoding="utf-8") as f:
         json.dump(existing, f, indent=2)
 
-    # Dispatch email notification in background (non-blocking)
-    background_tasks.add_task(
-        send_notification_email,
-        full_name=payload.full_name,
-        email=payload.email,
-        company=payload.company,
-        service=payload.service,
-        message=payload.message,
-        timestamp=record["created_at"]
-    )
+    # Note: Email notifications are delivered instantly via Web3Forms (HTTPS Port 443).
+    # Backend focuses on securely persisting the inquiry to contacts.json without sending duplicate emails.
+    # To re-enable secondary backend SMTP, uncomment the block below:
+    # background_tasks.add_task(
+    #     send_notification_email,
+    #     full_name=payload.full_name,
+    #     email=payload.email,
+    #     company=payload.company,
+    #     service=payload.service,
+    #     message=payload.message,
+    #     timestamp=record["created_at"]
+    # )
 
     return {
         "status": "success",
@@ -106,16 +108,23 @@ def get_contacts():
 def email_status():
     from dotenv import load_dotenv
     env_file = os.path.join(os.path.dirname(__file__), ".env")
-    # load_dotenv(dotenv_path=env_file, override=True)
-    load_dotenv(dotenv_path=env_file, override=False)
+    load_dotenv(dotenv_path=env_file, override=True)
+    resend_key = os.getenv("RESEND_API_KEY", "").strip()
     smtp_pass = os.getenv("SMTP_PASS", "").strip()
-    configured = bool(smtp_pass and not smtp_pass.startswith("your_"))
+    
+    resend_active = bool(resend_key and not resend_key.startswith("your_"))
+    smtp_active = bool(smtp_pass and not smtp_pass.startswith("your_"))
+    
+    active_provider = "resend" if resend_active else ("smtp" if smtp_active else "none")
     return {
-        "configured": configured,
+        "configured": resend_active or smtp_active,
+        "active_provider": active_provider,
+        "resend_https_enabled": resend_active,
+        "smtp_enabled": smtp_active,
         "recipient": os.getenv("NOTIFICATION_EMAIL", "shiwammaddheshiya@gmail.com"),
         "sender": os.getenv("SMTP_USER", "shiwammaddheshiya@gmail.com"),
-        "host": os.getenv("SMTP_HOST", "smtp.gmail.com"),
-        "instructions": "Enter your 16-character Google App Password in backend/.env to activate real inbox delivery."
+        "render_compatible": resend_active,
+        "note": "On Render Free Tier, RESEND_API_KEY is recommended because Render blocks outbound SMTP ports 25, 465, and 587."
     }
 
 @app.post("/api/test-email")

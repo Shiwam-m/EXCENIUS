@@ -7,7 +7,16 @@ import { ArrowUpRight, Loader2 } from "lucide-react";
 import { Instagram, Linkedin, Twitter, Dribbble } from "./Icons";
 import { Reveal, SectionHead } from "./Reveal";
 
-const API = import.meta.env.VITE_BACKEND_URL ? `${import.meta.env.VITE_BACKEND_URL}/api` : "/api";
+const getBackendUrl = () => {
+  let url = import.meta.env.VITE_BACKEND_URL;
+  if (!url) return "/api";
+  if (!url.startsWith("http://") && !url.startsWith("https://")) {
+    url = `https://${url}`;
+  }
+  return url.endsWith("/api") ? url : `${url.replace(/\/$/, "")}/api`;
+};
+
+const API = getBackendUrl();
 
 const SERVICE_OPTIONS = [
   "Website Development",
@@ -46,9 +55,36 @@ export default function Contact() {
 
   const onSubmit = async (values) => {
     try {
-      await axios.post(`${API}/contact`, values);
-      toast.success("Message sent — we'll get back to you soon.");
-      reset();
+      // 1. Send instant email notification via Web3Forms (100% Free HTTPS, never blocked by Render)
+      const formData = new FormData();
+      formData.append("access_key", "5b0b4999-e298-4ceb-8e82-4a0644a097b5");
+      formData.append("name", values.full_name);
+      formData.append("email", values.email);
+      formData.append("company", values.company || "N/A");
+      formData.append("service", values.service);
+      formData.append("message", values.message);
+      formData.append("subject", `🔔 New Project Inquiry: ${values.full_name} (${values.service})`);
+      formData.append("from_name", "NOIRFORM Studio Website");
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+
+      // 2. Also save to backend contacts.json as local backup (non-blocking)
+      try {
+        await axios.post(`${API}/contact`, values);
+      } catch (err) {
+        // Backend save is secondary; email is already delivered by Web3Forms!
+      }
+
+      if (data.success) {
+        toast.success("Message sent — we'll get back to you soon.");
+        reset();
+      } else {
+        toast.error(data.message || "Something went wrong. Please try again.");
+      }
     } catch {
       toast.error("Something went wrong. Please try again.");
     }

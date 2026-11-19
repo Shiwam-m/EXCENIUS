@@ -109,3 +109,7 @@ Production build:
 ```powershell
 npm run build
 ```
+
+## Run Both Files in single commond 
+``` .\run.ps1
+Both services launched in separate windows!

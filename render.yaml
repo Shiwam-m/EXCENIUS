@@ -1,0 +1,48 @@
+# Render Infrastructure Blueprint for 1-Click Deployment
+# Documentation: https://render.com/docs/blueprint-spec
+
+services:
+  # 1. FastAPI Backend Service
+  - type: web
+    name: noirform-backend
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: NOTIFICATION_EMAIL
+        value: shiwammaddheshiya@gmail.com
+      - key: RESEND_API_KEY
+        sync: false
+        # Tip: On Render Free Tier, create a free API key at https://resend.com
+        # because Render's free firewall blocks SMTP ports 25, 465, and 587.
+      - key: SMTP_USER
+        value: shiwammaddheshiya@gmail.com
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+
+  # 2. React + Vite Frontend Static Site
+  - type: web
+    name: noirform-frontend
+    runtime: static
+    region: oregon
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_BACKEND_URL
+        fromService:
+          type: web
+          name: noirform-backend
+          property: host
