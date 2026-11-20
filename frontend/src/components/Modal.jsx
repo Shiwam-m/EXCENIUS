@@ -30,7 +30,7 @@ export default function Modal({ open, onClose, children, testid = "modal" }) {
             onClick={onClose}
           />
           <motion.div
-            className="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto bg-[#121212] border border-white/10 p-8 md:p-10"
+            className="theme-modal relative w-full max-w-2xl max-h-[88vh] overflow-y-auto bg-[#121212] border border-white/10 p-8 md:p-10"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}

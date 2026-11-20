@@ -42,12 +42,12 @@ export default function WhyUs() {
         />
 
         <Reveal delay={0.1}>
-          <div className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+          <div className="why-grid mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
             {ADVANTAGES.map((a, i) => (
               <div
                 key={a.title}
                 data-testid={`why-advantage-card-${i}`}
-                className="group bg-[#0A0A0A] p-8 md:p-10 hover:bg-white transition-colors duration-300"
+                className="why-card theme-card group bg-[#0A0A0A] p-8 md:p-10 hover:bg-white transition-all duration-300"
                 data-cursor="hover"
               >
                 <span className="font-mono text-xs text-white/30 group-hover:text-black/40 transition-colors duration-300">

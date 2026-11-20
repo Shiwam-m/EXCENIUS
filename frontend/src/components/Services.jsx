@@ -135,11 +135,11 @@ export default function Services() {
               <Reveal key={s.id} delay={0.06 * i} className={span}>
                 <div
                   data-testid={`service-card-${s.id}`}
-                  className="group relative h-full flex flex-col bg-[#121212] border border-white/10 hover:border-white/30 p-8 md:p-10 transition-all duration-300 hover:-translate-y-1"
+                  className="theme-card group relative h-full flex flex-col bg-[#121212] border border-white/10 hover:border-white/30 p-8 md:p-10 transition-all duration-300 hover:-translate-y-1"
                   data-cursor="hover"
                 >
                   <div className="flex items-start justify-between">
-                    <div className="w-12 h-12 border border-white/15 flex items-center justify-center text-white/80 group-hover:bg-white group-hover:text-[#0A0A0A] transition-colors duration-300">
+                    <div className="service-icon-box w-12 h-12 border border-white/15 flex items-center justify-center text-white/80 group-hover:bg-white group-hover:text-[#0A0A0A] transition-colors duration-300">
                       <Icon size={22} strokeWidth={1.25} />
                     </div>
                     <span className="font-mono text-xs text-white/30">0{i + 1}</span>

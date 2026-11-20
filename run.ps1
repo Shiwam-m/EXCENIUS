@@ -1,6 +1,6 @@
 # Start FastAPI Backend and Vite Frontend concurrently
 Write-Host "==========================================" -ForegroundColor Magenta
-Write-Host "  NOIRFORM Digital Studio - Starting Services" -ForegroundColor Magenta
+Write-Host "  EXCENIUS Digital Studio - Starting Services" -ForegroundColor Magenta
 Write-Host "==========================================" -ForegroundColor Magenta
 
 # Check if Python is installed

@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import Logo from "./Logo";
 import { Instagram, Linkedin, Twitter, Dribbble } from "./Icons";
 import { lenisRef } from "./LenisProvider";
 
@@ -38,12 +39,9 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <a href="#home" className="flex items-center gap-2.5" aria-label="EXCENIUS home">
-              <svg viewBox="0 0 32 32" className="w-7 h-7" aria-hidden="true">
-                <rect width="32" height="32" rx="7" fill="#0A0A0A" stroke="rgba(255,255,255,0.35)" />
-                <path d="M21 10H11v12h10M11 16h8" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="square" fill="none" />
-              </svg>
-              <span className="font-display font-bold tracking-tight text-lg">EXCENIUS</span>
+            <a href="#home" className="flex items-center gap-3 group" aria-label="EXCENIUS home">
+              <Logo size={34} />
+              <span className="font-display font-bold tracking-tight text-xl">EXCENIUS</span>
             </a>
             <p className="mt-5 text-sm text-white/50 leading-relaxed max-w-xs">
               We don&apos;t just build digital products. We create meaningful digital experiences
@@ -114,7 +112,7 @@ export default function Footer() {
               <button
                 onClick={toTop}
                 data-testid="footer-back-to-top"
-                className="inline-flex items-center gap-2 border border-white/20 rounded-full px-5 py-2.5 text-xs font-mono uppercase tracking-[0.2em] text-white/70 hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+                className="footer-back-to-top inline-flex items-center gap-2 border border-white/20 rounded-full px-5 py-2.5 text-xs font-mono uppercase tracking-[0.2em] text-white/70 hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
               >
                 Back to Top
                 <ArrowUp size={14} strokeWidth={1.5} />

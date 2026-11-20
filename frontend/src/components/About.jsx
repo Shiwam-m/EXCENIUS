@@ -33,7 +33,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.25}>
             <figure className="mt-10 border-l border-white/20 pl-6">
-              <blockquote className="font-serifit italic text-xl md:text-2xl leading-snug text-white/90">
+              <blockquote className="about-quote font-serifit italic text-xl md:text-2xl leading-snug text-white/90">
                 &ldquo;We don&apos;t just build digital products. We create meaningful digital
                 experiences that help businesses grow.&rdquo;
               </blockquote>
@@ -51,7 +51,7 @@ export default function About() {
               <Reveal key={d} delay={0.06 * i}>
                 <div
                   data-testid={`about-discipline-${i}`}
-                  className="group flex items-center justify-between border-b border-white/10 py-6 hover:bg-white/5 transition-colors duration-300 px-2 -mx-2"
+                  className="about-discipline-row group flex items-center justify-between border-b border-white/10 py-6 hover:bg-white/5 transition-colors duration-300 px-2 -mx-2"
                   data-cursor="hover"
                 >
                   <div className="flex items-center gap-6">

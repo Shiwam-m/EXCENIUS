@@ -13,12 +13,11 @@ const Row = ({ hidden }) => (
     {ITEMS.map((t, i) => (
       <span key={i} className="flex items-center">
         <span
-          className="font-display font-bold uppercase tracking-tight text-4xl md:text-6xl whitespace-nowrap"
-          style={{ WebkitTextStroke: "1px rgba(255,255,255,0.35)", color: "transparent" }}
+          className="marquee-item font-display font-bold uppercase tracking-tight text-4xl md:text-6xl whitespace-nowrap"
         >
           {t}
         </span>
-        <span className="w-2 h-2 bg-white/60 rotate-45 mx-8 md:mx-14 shrink-0" />
+        <span className="marquee-dot w-2 h-2 rotate-45 mx-8 md:mx-14 shrink-0" />
       </span>
     ))}
   </div>

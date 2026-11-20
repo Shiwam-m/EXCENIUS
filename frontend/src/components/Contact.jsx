@@ -162,7 +162,7 @@ export default function Contact() {
             onSubmit={handleSubmit(onSubmit)}
             noValidate
             data-testid="contact-form"
-            className="bg-[#121212] border border-white/10 p-8 md:p-10 space-y-7"
+            className="theme-card bg-[#121212] border border-white/10 p-8 md:p-10 space-y-7"
           >
             <div>
               <label htmlFor="full_name" className="field-label block mb-2">
@@ -214,14 +214,14 @@ export default function Contact() {
                 <select
                   id="service"
                   data-testid="contact-select-service"
-                  className="field appearance-none pr-8"
+                  className="field appearance-none pr-8 cursor-pointer"
                   {...register("service")}
                 >
-                  <option value="" className="bg-[#121212]">
+                  <option value="">
                     Select a service
                   </option>
                   {SERVICE_OPTIONS.map((s) => (
-                    <option key={s} value={s} className="bg-[#121212]">
+                    <option key={s} value={s}>
                       {s}
                     </option>
                   ))}

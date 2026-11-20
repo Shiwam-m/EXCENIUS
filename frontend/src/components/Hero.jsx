@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import HeroCanvas from "./HeroCanvas";
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -33,8 +32,7 @@ export default function Hero() {
       data-testid="hero-section"
       className="relative min-h-screen flex flex-col justify-end overflow-hidden"
     >
-      <HeroCanvas />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/20 via-transparent to-[#0A0A0A]" />
+      <div className="hero-gradient absolute inset-0 pointer-events-none bg-gradient-to-b from-black/10 via-transparent to-transparent" />
 
       <motion.div
         style={{ y, opacity }}

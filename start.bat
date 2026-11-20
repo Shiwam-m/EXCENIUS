@@ -1,12 +1,12 @@
 @echo off
-title NOIRFORM Studio Launcher
+title EXCENIUS Studio Launcher
 echo ==============================================
-echo   NOIRFORM Digital Studio - Launching App
+echo   EXCENIUS Digital Studio - Launching App
 echo ==============================================
 echo.
 
-start "NOIRFORM Backend (FastAPI)" cmd /k "cd backend && python -m uvicorn main:app --reload --port 8001"
-start "NOIRFORM Frontend (React Vite)" cmd /k "cd frontend && npm run dev"
+start "EXCENIUS Backend (FastAPI)" cmd /k "cd backend && python -m uvicorn main:app --reload --port 8001"
+start "EXCENIUS Frontend (React Vite)" cmd /k "cd frontend && npm run dev"
 
 echo Backend started on http://127.0.0.1:8001
 echo Frontend started on http://localhost:5173

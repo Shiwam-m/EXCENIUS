@@ -92,6 +92,359 @@ section[id] {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }
 
+/* Theme support */
+.theme-card {
+  transition: background-color 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+}
+
+/* Nav scrolled styles per theme */
+.nav-scrolled {
+  background-color: rgba(10, 10, 10, 0.75);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="glass"] .nav-scrolled {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="warm-white"] .nav-scrolled {
+  background-color: rgba(247, 245, 240, 0.9) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-color: rgba(26, 25, 24, 0.1) !important;
+}
+
+/* Select dropdown options */
+select option {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+[data-theme="glass"] select option {
+  background-color: #0f131c !important;
+  color: #ffffff !important;
+}
+
+[data-theme="warm-white"] select option {
+  background-color: #efece5 !important;
+  color: #1a1918 !important;
+}
+
+/* Ambient glow visibility */
+.ambient-glow {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Marquee outline typography */
+.marquee-item {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+  color: transparent;
+}
+.marquee-dot {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* 1. Frosted Glass (glass) */
+[data-theme="glass"] body {
+  background-color: #07090e;
+}
+
+[data-theme="glass"] .theme-dropdown {
+  background-color: rgba(14, 18, 28, 0.8) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Logo adaptivity for 3D ribbon "e" in glass theme */
+[data-theme="glass"] .ribbon-back {
+  stroke: url(#ribbonGlassBack) !important;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4));
+}
+[data-theme="glass"] .ribbon-twist {
+  stroke: url(#ribbonGlassTwist) !important;
+}
+[data-theme="glass"] .ribbon-front {
+  stroke: url(#ribbonGlassFront) !important;
+}
+
+[data-theme="glass"] .ambient-glow {
+  opacity: 0.95;
+}
+
+[data-theme="glass"] .theme-card {
+  background-color: rgba(255, 255, 255, 0.035) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+[data-theme="glass"] .theme-card:hover {
+  background-color: rgba(255, 255, 255, 0.065) !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Why Choose Us section transparency in Glass theme */
+[data-theme="glass"] .why-grid {
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+[data-theme="glass"] .why-card {
+  background-color: rgba(255, 255, 255, 0.035) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[data-theme="glass"] .why-card:hover {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+[data-theme="glass"] .why-card:hover * {
+  color: #ffffff !important;
+}
+
+[data-theme="glass"] .theme-modal {
+  background-color: rgba(14, 14, 18, 0.85) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.7);
+}
+
+/* 2. Warm Ivory (High-Fashion Cream) */
+[data-theme="warm-white"] body {
+  background-color: #f7f5f0 !important;
+  color: #1a1918 !important;
+}
+
+[data-theme="warm-white"] *::selection,
+[data-theme="warm-white"] ::selection {
+  background-color: #1a1918 !important;
+  color: #f7f5f0 !important;
+}
+
+[data-theme="warm-white"] .theme-dropdown {
+  background-color: #efece5 !important;
+  border-color: rgba(26, 25, 24, 0.15) !important;
+  box-shadow: 0 20px 50px rgba(26, 25, 24, 0.12) !important;
+}
+
+[data-theme="warm-white"] .theme-dropdown-header {
+  color: rgba(26, 25, 24, 0.5) !important;
+  border-color: rgba(26, 25, 24, 0.1) !important;
+}
+
+[data-theme="warm-white"] .theme-dropdown-item {
+  color: rgba(26, 25, 24, 0.8) !important;
+}
+
+[data-theme="warm-white"] .theme-dropdown-item:hover {
+  background-color: rgba(26, 25, 24, 0.08) !important;
+  color: #000000 !important;
+}
+
+[data-theme="warm-white"] nav a:hover,
+[data-theme="warm-white"] .hover\:text-white:hover {
+  color: #000000 !important;
+}
+
+[data-theme="warm-white"] .marquee-item {
+  -webkit-text-stroke: 1.2px rgba(26, 25, 24, 0.45) !important;
+  color: transparent !important;
+}
+
+[data-theme="warm-white"] .marquee-dot {
+  background-color: rgba(26, 25, 24, 0.65) !important;
+}
+
+[data-theme="warm-white"] a[data-testid*="social"]:hover,
+[data-theme="warm-white"] a[data-testid*="footer-social"]:hover,
+[data-theme="warm-white"] a[data-testid*="contact-social"]:hover,
+[data-theme="warm-white"] a[aria-label="Instagram"]:hover,
+[data-theme="warm-white"] a[aria-label="LinkedIn"]:hover,
+[data-theme="warm-white"] a[aria-label="X (Twitter)"]:hover,
+[data-theme="warm-white"] a[aria-label="Dribbble"]:hover {
+  background-color: #1a1918 !important;
+  color: #f7f5f0 !important;
+  border-color: #1a1918 !important;
+}
+
+/* Services card icon box hover in Ivory */
+[data-theme="warm-white"] .group:hover .service-icon-box {
+  background-color: #1a1918 !important;
+  color: #f7f5f0 !important;
+  border-color: #1a1918 !important;
+}
+
+/* About Us disciplines row hover in Ivory */
+[data-theme="warm-white"] .about-discipline-row:hover {
+  background-color: rgba(26, 25, 24, 0.05) !important;
+}
+[data-theme="warm-white"] .about-discipline-row:hover span {
+  color: #000000 !important;
+}
+
+/* Contact & Footer email hover in Ivory */
+[data-theme="warm-white"] a[data-testid="contact-email-link"]:hover,
+[data-theme="warm-white"] a[data-testid="footer-email-link"]:hover {
+  color: #000000 !important;
+}
+
+/* Footer Back to Top hover in Ivory */
+[data-theme="warm-white"] .footer-back-to-top:hover,
+[data-theme="warm-white"] button[data-testid="footer-back-to-top"]:hover {
+  background-color: #1a1918 !important;
+  color: #f7f5f0 !important;
+  border-color: #1a1918 !important;
+}
+
+[data-theme="warm-white"] .grain {
+  opacity: 0.03 !important;
+  filter: invert(1);
+}
+
+[data-theme="warm-white"] .text-white {
+  color: #1a1918 !important;
+}
+[data-theme="warm-white"] .text-white\/90,
+[data-theme="warm-white"] .about-quote,
+[data-theme="warm-white"] blockquote {
+  color: #1a1918 !important;
+}
+[data-theme="warm-white"] .text-white\/80 {
+  color: rgba(26, 25, 24, 0.85) !important;
+}
+[data-theme="warm-white"] .text-white\/70 {
+  color: rgba(26, 25, 24, 0.75) !important;
+}
+[data-theme="warm-white"] .text-white\/60 {
+  color: rgba(26, 25, 24, 0.65) !important;
+}
+[data-theme="warm-white"] .text-white\/50,
+[data-theme="warm-white"] .text-white\/40 {
+  color: rgba(26, 25, 24, 0.48) !important;
+}
+[data-theme="warm-white"] .text-white\/30,
+[data-theme="warm-white"] .text-white\/20,
+[data-theme="warm-white"] .text-white\/15,
+[data-theme="warm-white"] .text-white\/10 {
+  color: rgba(26, 25, 24, 0.35) !important;
+}
+
+[data-theme="warm-white"] .border-white\/10,
+[data-theme="warm-white"] .border-white\/15,
+[data-theme="warm-white"] .border-white\/20,
+[data-theme="warm-white"] .border-white\/25 {
+  border-color: rgba(26, 25, 24, 0.12) !important;
+}
+[data-theme="warm-white"] .border-white\/30,
+[data-theme="warm-white"] .border-white\/40,
+[data-theme="warm-white"] .border-white\/50 {
+  border-color: rgba(26, 25, 24, 0.22) !important;
+}
+
+[data-theme="warm-white"] .bg-white {
+  background-color: #1a1918 !important;
+  color: #f7f5f0 !important;
+}
+[data-theme="warm-white"] .bg-\[\#0A0A0A\] {
+  background-color: #f7f5f0 !important;
+}
+[data-theme="warm-white"] .bg-\[\#121212\] {
+  background-color: #eeeae0 !important;
+}
+[data-theme="warm-white"] .bg-black\/70,
+[data-theme="warm-white"] .bg-black\/80 {
+  background-color: rgba(247, 245, 240, 0.9) !important;
+}
+
+[data-theme="warm-white"] .to-\[\#0A0A0A\] {
+  --tw-gradient-to: #f7f5f0 var(--tw-gradient-to-position) !important;
+}
+
+[data-theme="warm-white"] .theme-card {
+  background-color: #efece5 !important;
+  border-color: rgba(26, 25, 24, 0.1) !important;
+  box-shadow: 0 4px 20px 0 rgba(26, 25, 24, 0.05);
+}
+[data-theme="warm-white"] .theme-card:hover {
+  background-color: #e9e5dc !important;
+  border-color: rgba(26, 25, 24, 0.25) !important;
+  box-shadow: 0 10px 30px 0 rgba(26, 25, 24, 0.08);
+}
+
+[data-theme="warm-white"] .why-grid {
+  background-color: rgba(26, 25, 24, 0.12) !important;
+  border-color: rgba(26, 25, 24, 0.12) !important;
+}
+[data-theme="warm-white"] .why-card {
+  background-color: #efece5 !important;
+}
+[data-theme="warm-white"] .why-card:hover {
+  background-color: #1a1918 !important;
+}
+[data-theme="warm-white"] .why-card:hover * {
+  color: #f7f5f0 !important;
+}
+
+[data-theme="warm-white"] .theme-modal {
+  background-color: #f7f5f0 !important;
+  border-color: rgba(26, 25, 24, 0.12) !important;
+  box-shadow: 0 25px 60px 0 rgba(26, 25, 24, 0.16) !important;
+}
+
+[data-theme="warm-white"] .field {
+  color: #1a1918 !important;
+  border-color: rgba(26, 25, 24, 0.2) !important;
+}
+[data-theme="warm-white"] .field::placeholder {
+  color: rgba(26, 25, 24, 0.35) !important;
+}
+[data-theme="warm-white"] .field:focus {
+  border-color: #1a1918 !important;
+}
+
+[data-theme="warm-white"] .btn-primary {
+  background-color: #1a1918 !important;
+  color: #f7f5f0 !important;
+}
+[data-theme="warm-white"] .btn-primary:hover {
+  background-color: #33312f !important;
+}
+
+[data-theme="warm-white"] .btn-outline {
+  border-color: rgba(26, 25, 24, 0.25) !important;
+  color: #1a1918 !important;
+}
+[data-theme="warm-white"] .btn-outline:hover {
+  border-color: #1a1918 !important;
+  background-color: rgba(26, 25, 24, 0.04) !important;
+}
+
+[data-theme="warm-white"] .text-outline {
+  -webkit-text-stroke: 1px rgba(26, 25, 24, 0.22) !important;
+}
+
+/* Logo adaptivity for 3D ribbon "e" in warm-white theme */
+[data-theme="warm-white"] .ribbon-back {
+  stroke: url(#ribbonIvoryBack) !important;
+}
+[data-theme="warm-white"] .ribbon-twist {
+  stroke: url(#ribbonIvoryTwist) !important;
+}
+[data-theme="warm-white"] .ribbon-front {
+  stroke: url(#ribbonIvoryFront) !important;
+}
+
 .text-outline {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.22);
   color: transparent;
